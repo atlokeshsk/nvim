@@ -20,6 +20,22 @@ local servers = {
       },
     },
   },
+  golangci_lint_ls = {
+    cmd = { "golangci-lint-langserver" },
+    filetypes = { "go", "gomod" },
+    root_dir = util.root_pattern(
+      ".golangci.yml",
+      ".golangci.yaml",
+      ".golangci.toml",
+      ".golangci.json",
+      "go.work",
+      "go.mod",
+      ".git"
+    ),
+    init_options = {
+      command = { "golangci-lint", "run", "--out-format", "json" },
+    },
+  },
   yamlls = {
     settings = {
       yaml = {
