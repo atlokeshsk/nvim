@@ -36,6 +36,17 @@ local servers = {
       command = { "golangci-lint", "run", "--out-format", "json" },
     },
   },
+  bashls = {
+    cmd = { "bash-language-server", "start" },
+    filetyes = { "sh" },
+    root_dir = util.find_git_ancestor,
+    settings = {
+      bashIde = {
+        globPattern = "*@(.sh|.inc|.bash|.command)",
+      },
+    },
+    single_file_support = true,
+  },
   yamlls = {
     settings = {
       yaml = {
