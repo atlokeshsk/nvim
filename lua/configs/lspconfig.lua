@@ -77,7 +77,7 @@ local servers = {
   bufls = {
     cmd = { "bufls", "serve" },
     filetypes = { "proto" },
-    root_pattern = util.root_pattern("buf.work.yaml", ".git"),
+    root_pattern = util.root_pattern("buf.yaml", "buf.yml", ".git"),
   },
 }
 local nvlsp = require "nvchad.configs.lspconfig"
