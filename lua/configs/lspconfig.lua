@@ -74,10 +74,11 @@ local servers = {
       },
     },
   },
-  bufls = {
-    cmd = { "bufls", "serve" },
+  protols = {
+    cmd = { "protols" },
     filetypes = { "proto" },
-    root_pattern = util.root_pattern("buf.yaml", "buf.yml", ".git"),
+    single_file_support = true,
+    root_dir = util.find_git_ancestor,
   },
 }
 local nvlsp = require "nvchad.configs.lspconfig"
